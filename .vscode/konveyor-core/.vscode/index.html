@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="KADAR — Kabar Udara. Pantau kualitas udara dan rencanakan aktivitas luar ruang.">
+  <title>Home — KADAR Kabar Udara</title>
+
+  <!-- Font: DM Sans (isi) dan Manrope (judul) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Manrope:wght@500;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Library gratis: Bootstrap (navbar responsif) dan Leaflet (peta) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+  <!-- CSS kita: styles.css = gaya dasar, extras.css = navbar pill, animasi, skeleton, dll. -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="extras.css">
+</head>
+
+<!-- HALAMAN: Home — Halaman utama: hero, ringkasan kota, kartu menuju fitur.
+     data-page menentukan isi yang dirakit app.js (lihat objek T di app.js). -->
+
+<body data-page="index">
+
+  <!-- Navbar, isi halaman, footer, dan jam dibuat oleh app.js di sini -->
+  <div id="app"></div>
+
+  <!-- Script: Bootstrap, Leaflet (peta), Chart.js (grafik), lalu app.js milik kita -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

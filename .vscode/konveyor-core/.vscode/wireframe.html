@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>KADAR — Wireframe & Struktur</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Manrope:wght@500;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --ink: #183653;
+      --muted: #6f8297;
+      --line: #d6e0e9;
+      --paper: #f5f8fb;
+      --blue: #dce9f6;
+      --dark: #9eb3c8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #edf2f7;
+      color: var(--ink);
+      font: 14px 'DM Sans', sans-serif;
+    }
+
+    .wrap {
+      max-width: 1180px;
+      margin: auto;
+      padding: 34px 22px 70px;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+
+    .top h1 {
+      font: 800 28px Manrope;
+      margin: 0;
+    }
+
+    .top p {
+      color: var(--muted);
+      margin: 7px 0 0;
+    }
+
+    .top a {
+      color: #17589d;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .sheet {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 20px 0;
+      box-shadow: 0 8px 28px #294b6a0a;
+    }
+
+    .sheet h2 {
+      font: 800 20px Manrope;
+      margin: 0 0 6px;
+    }
+
+    .sub {
+      color: var(--muted);
+      font-size: 12px;
+      margin: 0 0 18px;
+    }
+
+    .browser {
+      border: 1px solid #bdcad7;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .browserbar {
+      height: 28px;
+      background: #e8eef4;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      padding: 0 11px;
+      gap: 5px;
+    }
+
+    .browserbar i {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #a8b7c7;
+    }
+
+    .nav {
+      height: 48px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .logo {
+      font: 800 17px Manrope;
+      color: #1556a4;
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 17px;
+      color: #667b90;
+    }
+
+    .theme {
+      border: 1px solid var(--line);
+      padding: 6px 10px;
+      border-radius: 4px;
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    .welcome {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f6f9fc;
+      border: 1px dashed #a9bbcc;
+      padding: 12px 15px;
+      border-radius: 5px;
+      margin-bottom: 16px;
+    }
+
+    .welcome b {
+      font: 700 15px Manrope;
+    }
+
+    .clock {
+      text-align: right;
+      font-size: 10px;
+      color: #536e89;
+    }
+
+    .clock strong {
+      display: block;
+      color: #1556a4;
+      font: 800 17px Manrope;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr .85fr;
+      gap: 20px;
+      align-items: center;
+      padding: 10px 0 22px;
+    }
+
+    .eyebrow {
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: #6685a4;
+      font-weight: 700;
+    }
+
+    .hero h3 {
+      font: 800 29px/1.15 Manrope;
+      margin: 12px 0;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.7;
+      max-width: 440px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #dce9f6;
+      border: 1px solid #b7cadc;
+      border-radius: 4px;
+      padding: 9px 13px;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .placeholder {
+      min-height: 145px;
+      border: 1px dashed #9fb2c5;
+      background: repeating-linear-gradient(135deg, #f6f9fc, #f6f9fc 10px, #f0f5f9 10px, #f0f5f9 20px);
+      border-radius: 7px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: #71879d;
+      font-size: 11px;
+      padding: 15px;
+    }
+
+    .placeholder b {
+      display: block;
+      color: #45627e;
+      margin-bottom: 5px;
+    }
+
+    .quick {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .quick .placeholder {
+      min-height: 62px;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin: 18px 0 10px;
+    }
+
+    .section-title b {
+      font: 700 16px Manrope;
+    }
+
+    .section-title small {
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .twocol {
+      display: grid;
+      grid-template-columns: 1.4fr .8fr;
+      gap: 12px;
+    }
+
+    .map {
+      min-height: 210px;
+    }
+
+    .side {
+      display: grid;
+      gap: 8px;
+    }
+
+    .side .placeholder {
+      min-height: 62px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 9px;
+    }
+
+    .cards .placeholder {
+      min-height: 110px;
+    }
+
+    .forecast {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 10px;
+    }
+
+    .forecast .placeholder {
+      min-height: 160px;
+    }
+
+    .footer {
+      margin-top: 12px;
+      background: #e8eef4;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      color: #657c91;
+      font-size: 10px;
+    }
+
+    .mobile {
+      width: 320px;
+      max-width: 100%;
+      margin: 0 auto;
+      border: 7px solid #203b56;
+      border-radius: 24px;
+      padding: 0 10px 14px;
+      background: #fff;
+    }
+
+    .mobile .nav {
+      height: 42px;
+      padding: 0 4px;
+    }
+
+    .mobile .navlinks {
+      display: none;
+    }
+
+    .mobile .content {
+      padding: 12px 3px;
+    }
+
+    .mobile .welcome {
+      display: block;
+    }
+
+    .mobile .clock {
+      text-align: left;
+      margin-top: 7px;
+    }
+
+    .mobile .hero {
+      grid-template-columns: 1fr;
+    }
+
+    .mobile .hero h3 {
+      font-size: 24px;
+    }
+
+    .mobile .hero .placeholder {
+      min-height: 115px;
+    }
+
+    .mobile .quick {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .mobile .twocol,
+    .mobile .forecast {
+      grid-template-columns: 1fr;
+    }
+
+    .mobile .map {
+      min-height: 155px;
+    }
+
+    .mobile .cards {
+      grid-template-columns: 1fr;
+    }
+
+    .mobile .cards .placeholder {
+      min-height: 65px;
+    }
+
+    .mobile .footer {
+      display: block;
+    }
+
+    .mobile .footer span {
+      display: block;
+      margin: 5px;
+    }
+
+    .note {
+      background: #fff8e9;
+      border: 1px solid #f1d7a8;
+      border-radius: 6px;
+      padding: 12px 14px;
+      color: #795b2a;
+      font-size: 11px;
+      line-height: 1.7;
+      margin-top: 15px;
+    }
+
+    .flow {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .flow span {
+      background: #edf4fb;
+      border: 1px solid #cbdbea;
+      padding: 9px 13px;
+      border-radius: 5px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .flow i {
+      font-style: normal;
+      color: #9babb9;
+      align-self: center;
+    }
+
+    @media (max-width:700px) {
+      .wrap {
+        padding: 22px 12px 45px;
+      }
+
+      .sheet {
+        padding: 15px;
+      }
+
+      .top {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .navlinks {
+        gap: 8px;
+      }
+
+      .navlinks span:nth-child(n+4) {
+        display: none;
+      }
+
+      .quick {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .twocol,
+      .forecast {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .footer {
+        display: block;
+      }
+
+      .footer span {
+        display: block;
+        margin: 5px;
+      }
+
+    }
+
+    .landing {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .land {
+      border: 1px solid #bdcad7;
+      border-radius: 8px;
+      background: #fafbfd;
+      min-height: 230px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 18px;
+      text-align: center;
+      position: relative;
+    }
+
+    .land .skipw {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      border: 1px solid #bdcad7;
+      border-radius: 99px;
+      padding: 4px 10px;
+      font-size: 10px;
+      background: #fff;
+    }
+
+    .land h4 {
+      font: 800 22px Manrope;
+      margin: 0;
+    }
+
+    .land small {
+      color: #6f8297;
+    }
+
+    .barw {
+      width: 70%;
+      height: 12px;
+      border: 2px dashed #9fb2c5;
+      border-radius: 99px;
+      background: #f0f5f9;
+      position: relative;
+    }
+
+    .barw i {
+      position: absolute;
+      inset: 0 30% 0 0;
+      background: #9eb3c8;
+      border-radius: 99px;
+    }
+
+    .browser .nav {
+      margin: 10px 14px;
+      border: 1px solid #bdcad7;
+      border-radius: 99px;
+      background: #eef4fa;
+    }
+
+    .clockw {
+      position: sticky;
+      bottom: 8px;
+      margin: 8px;
+      width: max-content;
+      border: 1px dashed #5d86ae;
+      background: #edf4fb;
+      border-radius: 99px;
+      padding: 6px 14px;
+      font-size: 10px;
+      font-weight: 700;
+      color: #1556a4;
+    }
+
+    @media (max-width:700px) {
+      .landing {
+        grid-template-columns: 1fr;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <header class="top">
+      <div>
+        <h1>KADAR — Wireframe</h1>
+        <p>Blueprint struktur halaman · desktop dan mobile · versi awal untuk menyamakan eksekusi tim</p>
+      </div>
+      <a href="index.html">← Kembali ke prototype</a>
+    </header>
+    <section class="sheet">
+      <h2>00. Landing page (2 tahap)</h2>
+      <p class="sub">Tampil sekali per sesi sebelum Home. Tombol Lewati selalu ada di pojok kanan atas.</p>
+      <div class="landing">
+        <div>
+          <div class="land"><span class="skipw">Lewati ↗</span>
+            <div class="placeholder" style="width:80%;min-height:130px">
+              <div><b>ANIMASI REVEAL LOGO KADAR</b>GIF layar penuh</div>
+            </div>
+          </div>
+          <div class="note">Halaman 1: hanya GIF. Setelah selesai (±4 detik) transisi fade ke halaman 2.</div>
+        </div>
+        <div>
+          <div class="land"><span class="skipw">Lewati ↗</span>
+            <h4>Selamat Datang di Kadar</h4><small>Kabar Udara · pantau, pahami, lindungi</small>
+            <div class="barw"><i></i>
+            </div><small>0% → 100%</small>
+          </div>
+          <div class="note">Halaman 2: loading screen. Bar penuh (±2,6 detik) lalu otomatis ke Home.</div>
+        </div>
+      </div>
+      <div class="flow" style="margin-top:14px"><span>Halaman 1: GIF</span><i>→</i><span>Halaman 2:
+          Loading</span><i>→</i><span>Home</span>
+      </div>
+    </section>
+    <section class="sheet">
+      <h2>01. Homepage / Dashboard</h2>
+      <p class="sub">Navbar berbentuk pill melayang (liquid glass). Urutan prioritas: pengantar → ringkasan kualitas
+        udara → akses ke pemantauan.</p>
+      <div class="browser">
+        <div class="browserbar"><i></i><i></i><i></i>
+        </div>
+        <div class="nav"><span class="logo">KADAR</span>
+          <div class="navlinks"><span>Home</span><span>Air
+              Monitor</span><span>Forecast</span><span>News</span><span>Education</span>
+          </div><span class="theme">☾ / ☼</span>
+        </div>
+        <div class="content">
+          <div class="hero">
+            <div>
+              <div class="eyebrow">KENALI UDARA DI SEKITARMU</div>
+              <h3>Udara yang baik,<br>awal hidup lebih baik.</h3>
+              <p>Deskripsi singkat KADAR dan ajakan mengecek kualitas udara sebelum beraktivitas di luar ruangan.</p>
+              <span class="btn">Pantau kualitas udara →</span>
+            </div>
+            <div class="placeholder">
+              <div><b>VISUAL / ILUSTRASI UDARA</b>Cloud · wind · city atmosphere</div>
+            </div>
+          </div>
+          <div class="section-title"><b>Ringkasan kualitas udara</b><small>Data simulasi · waktu pembaruan
+              ditampilkan</small>
+          </div>
+          <div class="quick">
+            <div class="placeholder">Kota & AQI</div>
+            <div class="placeholder">Kota & AQI</div>
+            <div class="placeholder">Kota & AQI</div>
+            <div class="placeholder">Kota & AQI</div>
+          </div>
+          <div class="section-title"><b>Pantau kualitas udara Indonesia</b><small>Lihat semua kota →</small>
+          </div>
+          <div class="twocol">
+            <div class="placeholder map">
+              <div><b>PETA INDONESIA</b>Marker kota berwarna berdasarkan kategori AQI</div>
+            </div>
+            <div class="side">
+              <div class="placeholder">
+                <div><b>DETAIL KOTA</b>AQI · status · polutan</div>
+              </div>
+              <div class="placeholder">
+                <div><b>REKOMENDASI</b>Apa yang sebaiknya dilakukan?</div>
+              </div>
+            </div>
+          </div>
+          <div class="section-title"><b>Jelajahi KADAR</b><small>Berita · Prediksi · Edukasi</small>
+          </div>
+          <div class="cards">
+            <div class="placeholder">Air Forecast</div>
+            <div class="placeholder">News & Air Alert</div>
+            <div class="placeholder">Education & Breathe/Act</div>
+          </div>
+        </div>
+        <div class="footer"><span>Logo + deskripsi KADAR</span><span>Kontak · Aduan · Sosial media</span>
+        </div>
+      </div>
+      <div class="clockw">● Tanggal &amp; jam lokal · melayang di pojok kiri bawah, tampil di semua halaman</div>
+    </section>
+    <section class="sheet">
+      <h2>02. Tampilan mobile homepage</h2>
+      <p class="sub">Konten disusun satu kolom, tombol mudah dijangkau, dan kartu ringkasan menggunakan grid dua kolom.
+      </p>
+      <div class="mobile">
+        <div class="nav"><span class="logo">KADAR</span><span>☰　☾</span>
+        </div>
+        <div class="content">
+          <div class="hero">
+            <div>
+              <div class="eyebrow">KENALI UDARA DI SEKITARMU</div>
+              <h3>Udara yang baik, awal hidup lebih baik.</h3>
+              <p>Pengantar singkat dan tombol pantau udara.</p><span class="btn">Pantau udara →</span>
+            </div>
+            <div class="placeholder">Ilustrasi udara / kota</div>
+          </div>
+          <div class="quick">
+            <div class="placeholder">AQI kota</div>
+            <div class="placeholder">AQI kota</div>
+            <div class="placeholder">AQI kota</div>
+            <div class="placeholder">AQI kota</div>
+          </div>
+          <div class="placeholder map" style="margin-top:12px">Peta kualitas udara</div>
+          <div class="cards" style="margin-top:10px">
+            <div class="placeholder">Detail AQI & saran</div>
+            <div class="placeholder">Air Forecast</div>
+            <div class="placeholder">News / Education</div>
+          </div>
+        </div>
+        <div class="footer"><span>Footer & kontak</span>
+        </div>
+      </div>
+    </section>
+    <section class="sheet">
+      <h2>03. Wireframe halaman fitur</h2>
+      <p class="sub">Gunakan pola header dan footer yang sama di semua halaman agar konsisten.</p>
+      <div class="section-title"><b>Air Monitor</b><small>CHECK + PROTECT</small>
+      </div>
+      <div class="twocol">
+        <div class="placeholder map">
+          <div><b>PETA INTERAKTIF</b>Pencarian kota · filter · legenda AQI</div>
+        </div>
+        <div class="side">
+          <div class="placeholder">
+            <div><b>RINGKASAN AQI</b>Angka · kategori · timestamp data</div>
+          </div>
+          <div class="placeholder">
+            <div><b>DAMPAK & SARAN</b>Kelompok sensitif · aktivitas</div>
+          </div>
+          <div class="placeholder">
+            <div><b>AIR ALERT</b>Peringatan jika kondisi memburuk</div>
+          </div>
+        </div>
+      </div>
+      <div class="section-title"><b>Air Forecast</b><small>UNDERSTAND</small>
+      </div>
+      <div class="forecast">
+        <div class="placeholder">
+          <div><b>PILIH KOTA & PERIODE</b>Hari ini · besok · beberapa hari</div>
+        </div>
+        <div class="placeholder">
+          <div><b>GRAFIK AQI</b>Grafik jam/hari · kategori warna · waktu pembaruan</div>
+        </div>
+      </div>
+      <div class="section-title"><b>News & Education</b><small>UNDERSTAND</small>
+      </div>
+      <div class="cards">
+        <div class="placeholder">Kartu berita + sumber + tanggal</div>
+        <div class="placeholder">Artikel edukasi + infografis</div>
+        <div class="placeholder">Polutan & dampak kesehatan</div>
+      </div>
+      <div class="section-title"><b>Breathe & Act</b><small>CONTRIBUTE</small>
+      </div>
+      <div class="cards">
+        <div class="placeholder">Saran tindakan personal</div>
+        <div class="placeholder">Kebiasaan rendah emisi</div>
+        <div class="placeholder">Form laporan pencemaran</div>
+      </div>
+      <div class="note"><b>Catatan konsistensi:</b> tanggal/jam mengikuti perangkat pengguna. Setiap data AQI dan
+        forecast wajib memiliki label sumber serta waktu pembaruan. Jika masih dummy, tampilkan label simulasi secara
+        jelas dan jangan menyebutnya real-time.</div>
+    </section>
+    <section class="sheet">
+      <h2>04. Alur navigasi dan struktur konten</h2>
+      <p class="sub">Alur ini menjaga hubungan fitur dengan konsep CHECK → UNDERSTAND → PROTECT → CONTRIBUTE.</p>
+      <div class="flow"><span>Home / Dashboard</span><i>→</i><span>Air Monitor</span><i>→</i><span>Air
+          Forecast</span><i>→</i><span>Air Alert</span><i>→</i><span>Breathe & Act</span>
+      </div>
+      <div class="flow" style="margin-top:10px"><span>News & Updates</span><i>+</i><span>Air & Atmosphere
+          Education</span><i>+</i><span>About / Contact</span>
+      </div>
+      <div class="note">Untuk pengerjaan tim, sepakati lebih dulu sistem kategori AQI, sumber data, format timestamp,
+        dan komponen yang benar-benar dapat didemonstrasikan. Pisahkan waktu perangkat dari waktu pembaruan data
+        kualitas udara.</div>
+    </section>
+  </main>
+</body>
+
+</html>
