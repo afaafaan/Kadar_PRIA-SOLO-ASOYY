@@ -4,6 +4,7 @@
 ## Fitur Utama
 - 
 - Manajemen data secara real-time
+- Kabar terbaru seputar permasalahan udara saat ini
 - 
 
 ## Teknologi yang Digunakan
