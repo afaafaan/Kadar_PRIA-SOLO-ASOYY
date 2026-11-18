@@ -17,7 +17,7 @@
 
 ## Teknologi yang Digunakan
 - Node.js
-- 
+- leaflet.js
 - 
 
 ## Instalasi
